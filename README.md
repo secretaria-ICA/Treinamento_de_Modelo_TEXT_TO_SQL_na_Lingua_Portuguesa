@@ -28,7 +28,7 @@ Esse experimento serviu como inspiração desse trabalho, onde pretendo utilizar
 
 **2.1 Objetivo:**
 
-O objetivo do projeto é treinar um modelo de tradução de linguagem natural em consulta SQL utilizando a língua portuguesa.
+O objetivo do projeto é treinar, no idioma português, um modelo de tradução de linguagem natural em consulta SQL.
 
 
 
@@ -104,7 +104,7 @@ Passo a passo dos comandos:
 
 ### **3. Resultados**
 
-    O modelo ainda está em execução no momento. 
+    Todos os detalhes da execução do modelo pode ser encontrado [aqui](https://wandb.ai/allangxg/smore-spider-group--final/groups/ppl-0.85.2.lstm.meta.ts.bert-large-uncased-norm-digit-400-0-0.0-0.0005-inverse-square-inverse-square-100000-4000?workspace=user-allangxg).
 
 ![Treinamento](https://github.com/allangxg/nl2sql/blob/main/treinamento.png)
 
