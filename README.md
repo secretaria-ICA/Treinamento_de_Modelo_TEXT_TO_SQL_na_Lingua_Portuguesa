@@ -20,7 +20,12 @@ Esse experimento serviu como inspiração desse trabalho, onde pretendo utilizar
 ---
 ### **1. Introdução**
 
---descrever--
+A grande maioria das empresas utilizam bancos de dados relacionais, porém sabemos que as formas tradicionais de interface com o banco, utilizando SQL, não são intuitivas para usuários não especialistas no assunto. Imagine como pode ser vantajoso para as empresas ter a capacidade de entregar o poder de realizar consultas no banco de dados ao time de negócio, com grande capacidade de extrair insights importantes sobre os dados, mas que hoje não são capazes por falta de conhecimento técnico.
+
+Diante desse dasafio, começaram a surgir modelos de aprendizagem de máquina capazes de traduzir a linguagem natural para consultas de banco de dados. Hoje, conseguimos encontrar vários modelos dispostos a resolver essa dor, porém a maioria deles avançaram somente no idiona inglês. 
+
+(continua... em construção)
+
 
 ---
 ### **2. Modelagem**
@@ -28,7 +33,7 @@ Esse experimento serviu como inspiração desse trabalho, onde pretendo utilizar
 
 **2.1 Objetivo:**
 
-O objetivo do projeto é treinar, no idioma português, um modelo de tradução de linguagem natural em consulta SQL.
+O objetivo do projeto é treinar um modelo de tradução de linguagem natural em consulta SQL no idioma português.
 
 
 
@@ -104,7 +109,7 @@ Passo a passo dos comandos:
 
 ### **3. Resultados**
 
-    Todos os detalhes da execução do modelo pode ser encontrado [aqui](https://wandb.ai/allangxg/smore-spider-group--final/groups/ppl-0.85.2.lstm.meta.ts.bert-large-uncased-norm-digit-400-0-0.0-0.0005-inverse-square-inverse-square-100000-4000?workspace=user-allangxg).
+Todos os detalhes da execução do modelo pode ser encontrado [aqui](https://wandb.ai/allangxg/smore-spider-group--final/groups/ppl-0.85.2.lstm.meta.ts.bert-large-uncased-norm-digit-400-0-0.0-0.0005-inverse-square-inverse-square-100000-4000?workspace=user-allangxg).
 
 ![Treinamento](https://github.com/allangxg/nl2sql/blob/main/treinamento.png)
 
