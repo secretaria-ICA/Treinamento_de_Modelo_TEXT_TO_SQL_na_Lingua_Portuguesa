@@ -46,6 +46,7 @@ O objetivo do projeto é treinar um modelo de tradução de linguagem natural em
 Esse projeto foi desenvolvido usando o Jupyter Notebook e o modelo foi treinado numa instância do Google Cloud de 16 vCPUs, 104 GB RAM e 1 GPU Tesla K80.
 
 Passo a passo dos comandos:
+
 **2.3.1: Download do projeto mRAT-SQL+GAP**
 
 
@@ -93,7 +94,7 @@ Passo a passo dos comandos:
 
     %cd '/home/jupyter/TabularSemanticParsing'
     !python3 data/spider/scripts/amend_missing_foreign_keys.py data/spider
-    ./experiment-bridge.sh configs/bridge/spider-bridge-bert-large.sh --process_data 0
+    !./experiment-bridge.sh configs/bridge/spider-bridge-bert-large.sh --process_data 0
 
 **2.3.4: Treinamento**
 
