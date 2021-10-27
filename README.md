@@ -96,13 +96,25 @@ Passo a passo dos comandos:
 
 **2.3.3: Pré-Processamento**
 
-_Antes de executar os passos abaixo é necessário realizar um ajuste no arquivo data/spider/scripts/amend_missing_foreign_keys.py. Abra o arquivo e inclua esse valor "#!/usr/bin/env python" na primeira linha. Salve e prossiga!_
+Antes de executar os passos abaixo é necessário realizar um ajuste no arquivo _TabularSemanticParsing/data/spider/scripts/amend_missing_foreign_keys.py_. Abra o arquivo e inclua o valor abaixo na primeira linha. 
+
+    #!/usr/bin/env python
+
+Salve e prossiga com os comandos abaixo.
 
     %cd '/home/jupyter/TabularSemanticParsing'
     !python3 data/spider/scripts/amend_missing_foreign_keys.py data/spider
     !./experiment-bridge.sh configs/bridge/spider-bridge-bert-large.sh --process_data 0
 
 **2.3.4: Treinamento**
+
+As configurações do modelo foram editadas para os valores abaixo antes de iniciar o treinamento. O arquivo de configuração pode ser encontrado nesse caminho: _TabularSemanticParsing/configs/bridge/spider-bridge-bert-large.sh_
+
+    num_steps=400
+    train_batch_size=2
+    dev_batch_size=2
+
+Após a edição, execute o comando abaixo para iniciar o treinamento.
 
     !./experiment-bridge.sh configs/bridge/spider-bridge-bert-large.sh --train 0
 
