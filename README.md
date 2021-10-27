@@ -22,10 +22,9 @@ Esse experimento serviu como inspiração desse trabalho, onde pretendo utilizar
 
 A grande maioria das empresas utilizam bancos de dados relacionais, porém sabemos que as formas tradicionais de interface com o banco, utilizando SQL, não são intuitivas para usuários não especialistas no assunto. Imagine como pode ser vantajoso para as empresas ter a capacidade de entregar o poder de realizar consultas no banco de dados ao time de negócio, com grande capacidade de extrair insights importantes sobre os dados, mas que hoje não são capazes por falta de conhecimento técnico.
 
-Diante desse dasafio, começaram a surgir modelos de aprendizagem de máquina capazes de traduzir a linguagem natural para consultas de banco de dados. Hoje, conseguimos encontrar vários modelos dispostos a resolver essa dor, porém a maioria deles avançaram somente no idiona inglês. 
+Diante desse dasafio, começaram a surgir modelos de aprendizagem de máquina capazes de traduzir a linguagem natural para consultas de banco de dados. Hoje, conseguimos encontrar vários modelos dispostos a resolver essa dor, porém a maioria deles avançaram somente no idioma inglês. 
 
-(continua... em construção)
-
+A proposta desse trabalho é utilizar projetos criados por outros pesquisadores que se propuseram a resolver esse problema e treinar um modelo que possa realizar essa tradução a partir do idioma português.
 
 ---
 ### **2. Modelagem**
@@ -111,16 +110,30 @@ _Antes de executar os passos abaixo é necessário realizar um ajuste no arquivo
 
 ### **3. Resultados**
 
-Todos os detalhes da execução do modelo pode ser encontrado [aqui](https://wandb.ai/allangxg/smore-spider-group--final/groups/ppl-0.85.2.lstm.meta.ts.bert-large-uncased-norm-digit-400-0-0.0-0.0005-inverse-square-inverse-square-100000-4000?workspace=user-allangxg).
+Todos os detalhes da execução do modelo podem ser encontrados [aqui](https://wandb.ai/allangxg/smore-spider-group--final).
 
 ![Treinamento](https://github.com/allangxg/nl2sql/blob/main/treinamento.png)
 
-![Fine Tuning Rate](https://github.com/allangxg/nl2sql/blob/main/finetuning.png)
+O treinamento do modelo foi interrompido após a execução de, aproximadamente, 400 épocas. Para ter um resultado mais preciso seria necessário aumentar esse número, o que acarretaria em um tempo de execução e custo maior.
 
-![Learning Rate](https://github.com/allangxg/nl2sql/blob/main/learningrate.png)
+Mas é animador o resultado que podemos obter mesmo com pouco tempo de treinamento. Veja na imagem abaixo, que apesar criar o SQL incompleto para responder a pergunta, obtivemos o mesmo resultado quando a pergunta é feita em inglês e português.
+
+![Inferência](https://github.com/allangxg/nl2sql/blob/main/inferencia.png)
 
 ---
 
 ### **4. Conclusão**
+
+O trabalho teve como objetivo treinar um modelo de linguagem natural no idioma português que fosse capaz de traduzir o texto para consulta de banco de dados.
+
+Foram estudados 3 artigos que se propuseram a resolver esse problema, porém com características distintas, são eles: [mRAT-SQL+GAP:A Portuguese Text-to-SQL Transformer](https://arxiv.org/abs/2110.03546), [Bridging Textual and Tabular Data for Cross-Domain Text-to-SQL Semantic Parsing](https://arxiv.org/abs/2012.12627) e [TaPas: Weakly Supervised Table Parsing via Pre-training](https://aclanthology.org/2020.acl-main.398/).
+
+A decisão foi utilizar a arquitetura proposta no artigo BRIDGE com o dataset [Spider](https://yale-lily.github.io/spider) traduzido do inglês para o português apresentado no artigo mRAT-SQL+GAP. Essa decisão ocorreu por considerar que a proposta do projeto BRIDGE possui o diferencial de não só modelar o problema levando em conta os nomes das tabelas, campos e suas relações, mas também, considera os valores dos campos como _anchor text_ para relacionar os termos utilizados nas perguntas com os valores correspondentes nos campos do banco de dados.
+
+![Representação do modelo. Imagem retirada do artigo original](https://github.com/allangxg/nl2sql/blob/main/arquitetura.png)
+
+Foi utilizado o modelo _transformer (BERT)_ na camada de encoder combinado com uma rede _LSTM pointer-generator_ com _multi-head attention_ na camada de decoder.
+
+O próximo objetivo será treinar o modelo usando 100 mil épocas como proposto no artigo original com o objetivo de criar um modelo mais assertivo nas traduções.
 
 ---
