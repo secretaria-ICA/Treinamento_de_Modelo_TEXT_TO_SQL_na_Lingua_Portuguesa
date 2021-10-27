@@ -97,6 +97,8 @@ Passo a passo dos comandos:
 
 **2.3.3: Pré-Processamento**
 
+_Antes de executar os passos abaixo é necessário realizar um ajuste no arquivo data/spider/scripts/amend_missing_foreign_keys.py. Abra o arquivo e inclua esse valor "#!/usr/bin/env python" na primeira linha. Salve e prossiga!_
+
     %cd '/home/jupyter/TabularSemanticParsing'
     !python3 data/spider/scripts/amend_missing_foreign_keys.py data/spider
     !./experiment-bridge.sh configs/bridge/spider-bridge-bert-large.sh --process_data 0
