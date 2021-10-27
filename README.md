@@ -13,7 +13,7 @@
 
 Um desafio em aberto na área de processamento de linguagem natural e que vem atraindo muito interesse da comunidade é permitir buscar respostas em um banco de dados, convertendo o texto de entrada em consulta SQL estruturada. É possível encontrar na literatura bastante avanço de pesquisas no idioma inglês, porém temos poucas iniciativas no nosso querido português.
 
-Recentemente, foi publicado um artigo por pesquisadores brasileiros - intitulado _mRAT-SQL+GAP: A Portuguese Text-to-SQL Transformer*_ e que pode ser encontrado [aqui](https://arxiv.org/abs/2110.03546) - que treinaram um modelo adaptado do sistema RAT-SQL + GAP com o desafio de investigar a tradução para SQL quando a pergunta de entrada é fornecida na língua portuguesa.
+Recentemente, foi publicado um artigo por pesquisadores brasileiros - intitulado _mRAT-SQL+GAP: A Portuguese Text-to-SQL Transformer*_ e que pode ser encontrado [aqui](https://arxiv.org/abs/2110.03546) - onde treinaram um modelo adaptado do sistema RAT-SQL + GAP com o desafio de investigar a tradução para SQL quando a pergunta de entrada é fornecida na língua portuguesa.
 
 Esse experimento serviu como inspiração desse trabalho, onde pretendo utilizar uma outra abordagem para treinamento do modelo na língua portuguesa. Para isso, irei utilizar a arquitetura descrita no artigo _Bridging Textual and Tabular Data for Cross-Domain Text-to-SQL Semantic Parsing_, cujo documento pode ser encontrado [aqui](https://arxiv.org/abs/2012.12627).
 
@@ -116,7 +116,7 @@ Todos os detalhes da execução do modelo podem ser encontrados [aqui](https://w
 
 O treinamento do modelo foi interrompido após a execução de, aproximadamente, 400 épocas. Para ter um resultado mais preciso seria necessário aumentar esse número, o que acarretaria em um tempo de execução e custo maior.
 
-Mas é animador o resultado que podemos obter mesmo com pouco tempo de treinamento. Veja na imagem abaixo, que apesar criar o SQL incompleto para responder a pergunta, obtivemos o mesmo resultado quando a pergunta é feita em inglês e português.
+Mas é animador o resultado que podemos obter mesmo com pouco tempo de treinamento. Veja na imagem abaixo, que apesar de criar o SQL incompleto para responder a pergunta, obtivemos o mesmo resultado quando a pergunta é feita em inglês e português.
 
 ![Inferência](https://github.com/allangxg/nl2sql/blob/main/inferencia.png)
 
@@ -128,7 +128,7 @@ O trabalho teve como objetivo treinar um modelo de linguagem natural no idioma p
 
 Foram estudados 3 artigos que se propuseram a resolver esse problema, porém com características distintas, são eles: [mRAT-SQL+GAP:A Portuguese Text-to-SQL Transformer](https://arxiv.org/abs/2110.03546), [Bridging Textual and Tabular Data for Cross-Domain Text-to-SQL Semantic Parsing](https://arxiv.org/abs/2012.12627) e [TaPas: Weakly Supervised Table Parsing via Pre-training](https://aclanthology.org/2020.acl-main.398/).
 
-A decisão foi utilizar a arquitetura proposta no artigo BRIDGE com o dataset [Spider](https://yale-lily.github.io/spider) traduzido do inglês para o português apresentado no artigo mRAT-SQL+GAP. Essa decisão ocorreu por considerar que a proposta do projeto BRIDGE possui o diferencial de não só modelar o problema levando em conta os nomes das tabelas, campos e suas relações, mas também, considera os valores dos campos como _anchor text_ para relacionar os termos utilizados nas perguntas com os valores correspondentes nos campos do banco de dados.
+A decisão foi utilizar a arquitetura proposta no projeto BRIDGE com o dataset [Spider](https://yale-lily.github.io/spider) traduzido do inglês para o português apresentado no projeto mRAT-SQL+GAP. Essa decisão ocorreu por considerar que a proposta do projeto BRIDGE possui o diferencial de não só modelar o problema levando em conta os nomes das tabelas, campos e suas relações, mas também, considera os valores dos campos como _anchor text_ para relacionar os termos utilizados nas perguntas com os valores correspondentes nos campos do banco de dados.
 
 ![Representação do modelo. Imagem retirada do artigo original](https://github.com/allangxg/nl2sql/blob/main/arquitetura.png)
 
