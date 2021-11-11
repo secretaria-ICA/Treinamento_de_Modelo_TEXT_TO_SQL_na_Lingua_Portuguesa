@@ -1,7 +1,7 @@
-# Treinamento de modelo TEXT-TO-SQL na língua portuguesa
+# Treinamento_de_Modelo_TEXT-TO-SQL_na_Língua_Portuguesa
 
 #### Aluno: [Allan Miranda](https://github.com/allangxg).
-#### Orientador: Leonardo Mendonça.
+#### Orientador: [Leonardo Mendonça](https://github.com/leofome8).
 
 
 ---
